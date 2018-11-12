@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:shrinkColumns="0,1,2,3"
+    android:stretchColumns="0,1,2,3"
+    tools:context="com.example.ckxgo.layoutstudy.TableLaout">
+<Button
+    android:text="独占一行"/>
+
+    <TableRow>
+        <Button
+            android:text="00000"/>
+        <Button
+            android:text="11111"/>
+        <Button
+            android:text="22222"/>
+        <Button
+            android:text="33333"/>
+    </TableRow>
+
+    <TableRow>
+        <Button
+            android:text="2222222222222222"/>
+        <Button
+            android:layout_span="3"
+            android:text="我占了3列"/>
+    </TableRow>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:shrinkColumns="0,1"
+        android:stretchColumns="0,1">
+        <TableRow>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="填充一" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="填充二" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="普通三" />
+        </TableRow>
+    </TableLayout>
+
+</TableLayout>

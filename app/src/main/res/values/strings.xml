@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">layoutStudy</string>
+    <string name="title_activity_absolute">AbsoluteActivity</string>
+</resources>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.ckxgo.layoutstudy.RelativeActivity">
+
+    <ImageView
+        android:layout_marginTop="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/thelostworld"/>
+
+    <ImageView
+        android:id="@+id/im_head"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="50dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/boy_head"/>
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="50dp"
+        android:layout_toRightOf="@+id/im_head"
+        android:layout_marginLeft="20dp"
+        android:background="@color/colorAccent"
+        android:hint="USERNAME"/>
+
+    <EditText
+        android:layout_width="150dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="75dp"
+        android:layout_toRightOf="@+id/im_head"
+        android:layout_marginLeft="20dp"
+        android:background="@color/colorAccent"
+        android:hint="PASSWORD"/>
+    <TextView
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="175dp"
+        android:layout_toRightOf="@id/im_head"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:text="注册账号"
+        android:background="@color/colorAccent"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_toRightOf="@id/im_head"
+        android:layout_marginLeft="175dp"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="75dp"
+        android:text="找回密码"
+        android:background="@color/colorAccent"
+        android:gravity="center"/>
+
+    <CheckBox
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="保存密码"
+        android:layout_below="@id/im_head"
+        android:background="#9999ff"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="20dp"
+        />
+
+    <CheckBox
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="自动登录"
+        android:layout_below="@id/im_head"
+        android:layout_alignParentRight="true"
+        android:background="#9999ff"
+        android:layout_marginRight="35dp"
+        android:layout_marginTop="20dp"
+        />
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/im_head"
+        android:layout_marginTop="75dp"
+        android:text="登陆"
+        />
+
+
+
+</RelativeLayout>

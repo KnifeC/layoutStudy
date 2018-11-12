@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.ckxgo.layoutstudy.FrameActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:src="@drawable/capturingcolors"
+        android:scaleType="fitXY"/>
+
+    <Button
+        android:id="@+id/btn_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PLAY"
+        android:layout_marginTop="200dp"/>
+
+    <Button
+        android:id="@+id/btn_pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PAUSE"
+        android:layout_marginTop="200dp"
+        android:layout_gravity="right"
+        />
+
+    <ImageView
+        android:id="@+id/im_play"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:scaleType="fitXY"
+        android:layout_marginTop="175dp"
+        android:src="@drawable/play"/>
+
+    <ImageView
+        android:id="@+id/im_pause"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:scaleType="fitXY"
+        android:layout_marginTop="175dp"
+        android:layout_gravity="right"
+        android:src="@drawable/pause"
+        android:visibility="gone"/>
+</FrameLayout>

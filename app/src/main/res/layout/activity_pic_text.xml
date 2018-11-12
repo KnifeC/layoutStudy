@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.ckxgo.layoutstudy.PicText">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    <Button
+        android:id="@+id/btn_color_change_1"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="切换颜色1"/>
+
+
+        <Button
+            android:id="@+id/btn_color_change_2"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="切换颜色2"/>
+
+        <Button
+            android:id="@+id/btn_color_change_3"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="切换颜色3"/>
+
+        <Button
+            android:id="@+id/btn_text_default"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="恢复默认颜色"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="嗨!我的朋友们"
+        android:textSize="45sp"
+        android:textColor="#ee0000"
+        />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pic_text"
+            android:text="图文混排"/>
+    </LinearLayout>
+
+
+</LinearLayout>
