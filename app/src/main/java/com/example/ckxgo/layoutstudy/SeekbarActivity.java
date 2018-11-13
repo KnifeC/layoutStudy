@@ -21,12 +21,12 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class SeekbarActivity extends AppCompatActivity {
+public class SeekbarActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener{
     ImageView http_picture;
     SeekBar sb_bigsmall;
     SeekBar sb_rotation;
     Matrix matrix;
-
+    Bitmap bitmap;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
@@ -65,29 +65,7 @@ public class SeekbarActivity extends AppCompatActivity {
             public void onStopTrackingTouch(SeekBar seekBar) {
             }
         });
-        sb_rotation.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                ImageView http_picture = (ImageView) findViewById(R.id.http_picture);
-                Matrix matrix = new Matrix();
-                float d = progress;
-                matrix.setRotate(d);
-//                http_picture.setDrawingCacheEnabled(true);
-//                Bitmap bitmap=http_picture.getDrawingCache();
-//                http_picture.setDrawingCacheEnabled(false);
-                Bitmap bitmap = ((BitmapDrawable)http_picture.getDrawable()).getBitmap();
-                Bitmap bitmap1 = bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
-                http_picture.setImageBitmap(bitmap1);
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-            }
-        });
+        sb_rotation.setOnSeekBarChangeListener(this) ;
         RadioButton pic1 = (RadioButton) findViewById(R.id.picchoose_1);
         RadioButton pic2 = (RadioButton) findViewById(R.id.picchoose_2);
         RadioButton pic3 = (RadioButton) findViewById(R.id.picchoose_3);
@@ -100,6 +78,7 @@ public class SeekbarActivity extends AppCompatActivity {
             byte[] picbyte = httpPic.picbitmap;
             Toast.makeText(SeekbarActivity.this,picbyte.toString(),Toast.LENGTH_SHORT).show();
             http_picture.setImageBitmap(BitmapFactory.decodeByteArray(picbyte,0,picbyte.length));
+            bitmap = ((BitmapDrawable)http_picture.getDrawable()).getBitmap();
         });
         pic2.setOnClickListener((v)->{
             GetHTTPPic httpPic = new GetHTTPPic(1);
@@ -109,6 +88,7 @@ public class SeekbarActivity extends AppCompatActivity {
             byte[] picbyte = httpPic.picbitmap;
             Toast.makeText(SeekbarActivity.this,picbyte.toString(),Toast.LENGTH_SHORT).show();
             http_picture.setImageBitmap(BitmapFactory.decodeByteArray(picbyte,0,picbyte.length));
+            bitmap = ((BitmapDrawable)http_picture.getDrawable()).getBitmap();
         });
         pic3.setOnClickListener((v)->{
             GetHTTPPic httpPic = new GetHTTPPic(2);
@@ -118,6 +98,7 @@ public class SeekbarActivity extends AppCompatActivity {
             byte[] picbyte = httpPic.picbitmap;
             Toast.makeText(SeekbarActivity.this,picbyte.toString(),Toast.LENGTH_SHORT).show();
             http_picture.setImageBitmap(BitmapFactory.decodeByteArray(picbyte,0,picbyte.length));
+            bitmap = ((BitmapDrawable)http_picture.getDrawable()).getBitmap();
         });
         pic4.setOnClickListener((v)->{
             GetHTTPPic httpPic = new GetHTTPPic(3);
@@ -127,9 +108,39 @@ public class SeekbarActivity extends AppCompatActivity {
             byte[] picbyte = httpPic.picbitmap;
             Toast.makeText(SeekbarActivity.this,picbyte.toString(),Toast.LENGTH_SHORT).show();
             http_picture.setImageBitmap(BitmapFactory.decodeByteArray(picbyte,0,picbyte.length));
+            bitmap = ((BitmapDrawable)http_picture.getDrawable()).getBitmap();
         });
     }
+
+    @Override
+    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+        switch(seekBar.getId()){
+            case R.id.sb_rotation:
+                ImageView http_picture = (ImageView) findViewById(R.id.http_picture);
+                Matrix matrix = new Matrix();
+                float d = progress;
+                matrix.setRotate(d);
+//                http_picture.setDrawingCacheEnabled(true);
+//                Bitmap bitmap=http_picture.getDrawingCache();
+//                http_picture.setDrawingCacheEnabled(false);
+
+                Bitmap bitmap1 = bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight(), matrix, true);
+                http_picture.setImageBitmap(bitmap1);
+        }
+    }
+
+    @Override
+    public void onStartTrackingTouch(SeekBar seekBar) {
+
+    }
+
+    @Override
+    public void onStopTrackingTouch(SeekBar seekBar) {
+
+    }
 }
+
+
 class GetHTTPPic implements Runnable {
     byte[] picbitmap;
     int urlnum;
