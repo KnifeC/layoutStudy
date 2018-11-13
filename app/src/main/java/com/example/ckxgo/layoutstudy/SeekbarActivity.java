@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
+import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.SeekBar;
+import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -27,6 +29,13 @@ public class SeekbarActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+                .detectDiskReads().detectDiskWrites().detectNetwork()
+                .penaltyLog().build());
+        StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
+                .detectLeakedSqlLiteObjects().detectLeakedClosableObjects()
+                .penaltyLog().penaltyDeath().build());
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seekbar);
         ImageView http_picture = (ImageView) findViewById(R.id.http_picture);
@@ -85,37 +94,49 @@ public class SeekbarActivity extends AppCompatActivity {
         RadioButton pic4 = (RadioButton) findViewById(R.id.picchoose_4);
         pic1.setOnClickListener((v)->{
             GetHTTPPic httpPic = new GetHTTPPic(0);
-            Thread th = new Thread(httpPic);
-            th.start();
-            http_picture.setImageBitmap(BitmapFactory.decodeByteArray(httpPic.picbitmap,0,httpPic.picbitmap.length));
+            //Thread th = new Thread(httpPic);
+            //th.start();
+            httpPic.run();
+            byte[] picbyte = httpPic.picbitmap;
+            Toast.makeText(SeekbarActivity.this,picbyte.toString(),Toast.LENGTH_SHORT).show();
+            http_picture.setImageBitmap(BitmapFactory.decodeByteArray(picbyte,0,picbyte.length));
         });
         pic2.setOnClickListener((v)->{
             GetHTTPPic httpPic = new GetHTTPPic(1);
-            Thread th = new Thread(httpPic);
-            th.start();
-            http_picture.setImageBitmap(BitmapFactory.decodeByteArray(httpPic.picbitmap,0,httpPic.picbitmap.length));
+            //Thread th = new Thread(httpPic);
+            //th.start();
+            httpPic.run();
+            byte[] picbyte = httpPic.picbitmap;
+            Toast.makeText(SeekbarActivity.this,picbyte.toString(),Toast.LENGTH_SHORT).show();
+            http_picture.setImageBitmap(BitmapFactory.decodeByteArray(picbyte,0,picbyte.length));
         });
         pic3.setOnClickListener((v)->{
             GetHTTPPic httpPic = new GetHTTPPic(2);
-            Thread th = new Thread(httpPic);
-            th.start();
-            http_picture.setImageBitmap(BitmapFactory.decodeByteArray(httpPic.picbitmap,0,httpPic.picbitmap.length));
+            //Thread th = new Thread(httpPic);
+            //th.start();
+            httpPic.run();
+            byte[] picbyte = httpPic.picbitmap;
+            Toast.makeText(SeekbarActivity.this,picbyte.toString(),Toast.LENGTH_SHORT).show();
+            http_picture.setImageBitmap(BitmapFactory.decodeByteArray(picbyte,0,picbyte.length));
         });
         pic4.setOnClickListener((v)->{
             GetHTTPPic httpPic = new GetHTTPPic(3);
-            Thread th = new Thread(httpPic);
-            th.start();
-            http_picture.setImageBitmap(BitmapFactory.decodeByteArray(httpPic.picbitmap,0,httpPic.picbitmap.length));
+            //Thread th = new Thread(httpPic);
+            //th.start();
+            httpPic.run();
+            byte[] picbyte = httpPic.picbitmap;
+            Toast.makeText(SeekbarActivity.this,picbyte.toString(),Toast.LENGTH_SHORT).show();
+            http_picture.setImageBitmap(BitmapFactory.decodeByteArray(picbyte,0,picbyte.length));
         });
     }
 }
 class GetHTTPPic implements Runnable {
     byte[] picbitmap;
     int urlnum;
-    String[] picurl = {"https://raw.githubusercontent.com/KnifeC/image/master/head_pic.png",
-            "https://i.loli.net/2018/11/13/5beabbcbe4f23.png",
-            "https://i.loli.net/2018/11/13/5beabc36b76a9.png",
-            "https://i.loli.net/2018/11/13/5beabc7cdc8a1.png"};
+    String[] picurl = {"https://i.loli.net/2018/11/13/5bead3c6da455.png",
+            "https://i.loli.net/2018/11/13/5bead3b729d21.png",
+            "https://i.loli.net/2018/11/13/5bead20b1dcc2.png",
+            "https://i.loli.net/2018/11/13/5bead3acc475a.png"};
 
     public GetHTTPPic(int i) {
         this.urlnum = i;
