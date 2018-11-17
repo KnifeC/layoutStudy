@@ -82,5 +82,11 @@ public class MainActivity extends AppCompatActivity {
         stuaddpro.setOnClickListener((v)->{
             
         });
+
+        Button savelaunch = (Button) findViewById(R.id.savelaunch);
+        savelaunch.setOnClickListener((v)->{
+            Intent intent = new Intent(MainActivity.this,SavePasswordActivity.class);
+            startActivity(intent);
+        });
     }
 }

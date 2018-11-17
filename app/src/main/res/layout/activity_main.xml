@@ -70,5 +70,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/seekbar"
         android:text="图片变换"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/savelaunch"
+        android:text="记住密码实现"/>
 </LinearLayout>
 </ScrollView>

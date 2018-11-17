@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ckxgo.layoutstudy">
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"></uses-permission>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
 
     <application
         android:allowBackup="true"
@@ -34,7 +35,8 @@
         <activity android:name=".MoreDataTrans" />
         <activity android:name=".StuaddPackage.StuAddActivity" />
         <activity android:name=".StuaddPackage.StuVisitActivity" />
-        <activity android:name=".StuaddPackage.StuChangeActivity"></activity>
+        <activity android:name=".StuaddPackage.StuChangeActivity" />
+        <activity android:name=".SavePasswordActivity"></activity>
     </application>
 
 </manifest>
