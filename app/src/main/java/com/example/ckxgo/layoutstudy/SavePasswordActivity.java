@@ -48,7 +48,6 @@ public class SavePasswordActivity extends AppCompatActivity {
                 editor.commit();
                 Toast.makeText(SavePasswordActivity.this,"密码未保存",Toast.LENGTH_SHORT).show();
                 finish();
-                finish();
             }
         });
     }

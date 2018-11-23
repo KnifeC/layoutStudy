@@ -36,7 +36,8 @@
         <activity android:name=".StuaddPackage.StuAddActivity" />
         <activity android:name=".StuaddPackage.StuVisitActivity" />
         <activity android:name=".StuaddPackage.StuChangeActivity" />
-        <activity android:name=".SavePasswordActivity"></activity>
+        <activity android:name=".SavePasswordActivity" />
+        <activity android:name=".PicChange"></activity>
     </application>
 
 </manifest>

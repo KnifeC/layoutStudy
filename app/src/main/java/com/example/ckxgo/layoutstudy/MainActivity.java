@@ -88,5 +88,11 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this,SavePasswordActivity.class);
             startActivity(intent);
         });
+
+        Button goPicChange = (Button) findViewById(R.id.goPicChange);
+        goPicChange.setOnClickListener((v)->{
+            Intent intent = new Intent(MainActivity.this,PicChange.class);
+            startActivity(intent);
+        });
     }
 }
