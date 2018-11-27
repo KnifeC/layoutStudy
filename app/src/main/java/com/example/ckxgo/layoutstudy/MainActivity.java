@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.ckxgo.layoutstudy.StuaddPackage.StuVisitActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -80,7 +82,8 @@ public class MainActivity extends AppCompatActivity {
         });
         Button stuaddpro = (Button) findViewById(R.id.stuaddpro);
         stuaddpro.setOnClickListener((v)->{
-            
+            Intent intent = new Intent(MainActivity.this, StuVisitActivity.class);
+            startActivity(intent);
         });
 
         Button savelaunch = (Button) findViewById(R.id.savelaunch);
