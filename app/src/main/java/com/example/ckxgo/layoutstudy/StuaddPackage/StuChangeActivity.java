@@ -40,22 +40,17 @@ public class StuChangeActivity extends AppCompatActivity {
         stuaddName.setText(student.getStuname());
         stuaddNumber.setText(student.getStunumber());
         stuaddMajor.setText(student.getStumajor());
-
+        if(student.getSex()=="男"){
+            stuaddmale.setChecked(true);
+        }else{
+            stuaddfamale.setChecked(true);
+        }
+        stuaddheadimage.setImageResource(student.getImageId());
+        stuaddheadimage.setTag(student.getImageId());
         stuchange_complete.setOnClickListener((v)->{
             if(!check()){
                 return;
             }
-            String sex = "";
-            if(stuaddmale.isChecked()){
-                sex = "男";
-            }
-            if(stuaddfamale.isChecked()){
-                sex = "女";
-            }
-            String major = stuaddMajor.getText().toString();
-            list.add(student);
-        });
-        stuchange_complete.setOnClickListener((v)->{
             intent.putExtra("StudentAdded",list);
             setResult(RESULT_OK,intent);
             finish();
