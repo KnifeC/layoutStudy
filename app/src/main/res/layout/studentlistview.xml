@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,29 +11,53 @@
     android:layout_marginLeft="20dp"
     android:id="@+id/studenticon"
     />
-    <LinearLayout
-        android:layout_width="170dp"
-        android:layout_height="50dp"
-        android:orientation="vertical"
-        >
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="35dp"
+            android:textSize="20dp"
+            android:layout_marginLeft="70dp"
             android:id="@+id/studentname"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
+            android:textSize="10dp"
+            android:layout_marginLeft="70dp"
+            android:layout_below="@id/studentname"
+            android:id="@+id/studentnumber"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            android:layout_toRightOf="@id/studentname"
+            android:layout_marginLeft="10dp"
             android:id="@+id/studentmajor"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:id="@+id/studentnumber"/>
-    </LinearLayout>
+            android:textSize="10dp"
+            android:layout_alignStart="@id/studentmajor"
+            android:layout_below="@id/studentmajor"
+            android:id="@+id/studentsex"/>
 
 
-</LinearLayout>
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/pencil"
+        android:layout_marginRight="70dp"
+        android:layout_alignParentRight="true"
+        android:id="@+id/changestudent"/>
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/trashbin"
+        android:layout_alignParentRight="true"
+        android:id="@+id/deletestudent"/>
+
+</RelativeLayout>

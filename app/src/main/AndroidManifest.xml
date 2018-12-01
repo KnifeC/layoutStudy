@@ -37,7 +37,9 @@
         <activity android:name=".StuaddPackage.StuVisitActivity" />
         <activity android:name=".StuaddPackage.StuChangeActivity" />
         <activity android:name=".SavePasswordActivity" />
-        <activity android:name=".PicChange"></activity>
+        <activity android:name=".PicChange" />
+        <activity android:name=".StuaddPackage.StudelActivity" />
+        <activity android:name=".StuaddPackage.StudentDeleteActivity"></activity>
     </application>
 
 </manifest>

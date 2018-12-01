@@ -1,24 +1,26 @@
 package com.example.ckxgo.layoutstudy.StuaddPackage;
 
+import java.io.Serializable;
+
 /**
  * Created by ckxgo on 2018/11/17.
  */
 
-public class Student {
-    String stuname;
-    int imageId;
-    String stunumber;
-    String stumajor;
-    public Student(String stuname, int imageId, String stunumber, String stumajor) {
+public class Student implements Serializable {
+    public Student(String stuname, int imageId, String stunumber, String stumajor, String sex) {
         this.stuname = stuname;
         this.imageId = imageId;
         this.stunumber = stunumber;
         this.stumajor = stumajor;
+        this.sex = sex;
     }
 
-    public String getStumajor() {
-        return stumajor;
-    }
+    String stuname;
+    int imageId;
+    String stunumber;
+    String stumajor;
+    String sex;
+    String class_;
 
     public String getStuname() {
         return stuname;
@@ -44,4 +46,19 @@ public class Student {
         this.stunumber = stunumber;
     }
 
+    public String getStumajor() {
+        return stumajor;
+    }
+
+    public void setStumajor(String stumajor) {
+        this.stumajor = stumajor;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
 }
