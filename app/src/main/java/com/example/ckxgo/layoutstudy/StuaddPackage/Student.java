@@ -22,6 +22,16 @@ public class Student implements Serializable {
     String sex;
     String class_;
 
+    public String getEnrollDate() {
+        return enrollDate;
+    }
+
+    public void setEnrollDate(String enrollDate) {
+        this.enrollDate = enrollDate;
+    }
+
+    String enrollDate;
+
     public String getStuname() {
         return stuname;
     }

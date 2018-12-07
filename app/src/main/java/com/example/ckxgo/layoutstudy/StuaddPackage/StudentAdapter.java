@@ -78,10 +78,12 @@ public class StudentAdapter extends BaseAdapter {
             ((Activity)context).startActivityForResult(intent,1);
         });
         gostudelete.setOnClickListener((v)->{
-            Intent intent = new Intent(context,StudentDeleteActivity.class);
-            intent.putExtra("StudentAdded",stulist);
-            intent.putExtra("position",position);
-            ((Activity)context).startActivityForResult(intent,1);
+//            Intent intent = new Intent(context,StudentDeleteActivity.class);
+//            intent.putExtra("StudentAdded",stulist);
+//            intent.putExtra("position",position);
+//            ((Activity)context).startActivityForResult(intent,1);
+            stulist.remove(position);
+            notifyDataSetChanged();
         });
         return view;
     }

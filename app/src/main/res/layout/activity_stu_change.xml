@@ -64,7 +64,7 @@
 
         </RadioGroup>
 
-        <AutoCompleteTextView
+        <Spinner
             android:id="@+id/stuchangeMajor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

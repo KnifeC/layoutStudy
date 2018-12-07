@@ -46,14 +46,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        Button goComprehensive = (Button) findViewById(R.id.goComprehensive);
-        goComprehensive.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,ComprehensiveActivity.class);
-                startActivity(intent);
-            }
-        });
+//        Button goComprehensive = (Button) findViewById(R.id.goComprehensive);
+//        goComprehensive.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivity.this,ComprehensiveActivity.class);
+//                startActivity(intent);
+//            }
+//        });
         Button pic_text_btn = (Button) findViewById(R.id.pic_text_btn);
         pic_text_btn.setOnClickListener(new View.OnClickListener(){
             @Override

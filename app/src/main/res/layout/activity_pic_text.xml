@@ -56,7 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/pic_text"
-            android:text="图文混排"/>
+            android:text="增加图片"/>
     </LinearLayout>
 
 
